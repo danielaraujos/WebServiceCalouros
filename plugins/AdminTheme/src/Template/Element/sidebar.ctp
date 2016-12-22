@@ -50,6 +50,12 @@
                 ]
             );
             ?>
+            <?= $this->Menu->treeView('fa fa-users', 'Emails Institucionais', 'emails', [
+                    ['Adicionar email', 'add'],
+                    ['Gerenciar emails', 'index'],
+                ]
+            );
+            ?>
 
             <?= $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [
                     ['Adicionar usuários', 'add'],
