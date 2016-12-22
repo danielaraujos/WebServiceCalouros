@@ -18,16 +18,7 @@ class UsersSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [
-            [
-                'id' => '1',
-                'name' => 'Administrador',
-                'username' => 'admin',
-                'password' => '$2y$10$BUQPO7PVDn9gDXdOhuT2VOsyKYWVueR1fS.hnmAfmNtkSZ6nMEQNK',
-                'email' => 'admin@admin.com',
-            ],
-        ];
-
+        $data = [];
 
         $table = $this->table('users');
         $table->insert($data)->save();

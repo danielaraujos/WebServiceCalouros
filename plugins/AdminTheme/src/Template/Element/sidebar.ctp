@@ -31,6 +31,15 @@
             ?>
 
 
+            <?= $this->Menu->treeView('fa fa-tags', 'Calendário acadêmico ', 'calendars', [
+                    ['Adicionar evento', 'add'],
+                    ['Gerenciar calendário', 'index'],
+                    ['Gerenciar meses', '../MonthCalendars/index']
+                ]
+            );
+            ?>
+
+
             <?= $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [
                     ['Adicionar usuários', 'add'],
                     ['Gerenciar usuários', 'index'],
