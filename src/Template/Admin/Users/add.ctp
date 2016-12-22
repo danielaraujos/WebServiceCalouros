@@ -6,13 +6,13 @@
     <?= $this->Form->create($user,['type'=>'file']) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('name', ['label'=>'Nome','class' => 'form-control', 'placeholder' => 'Digite seu nome']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('email', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('email', ['label'=>'E-mail','class' => 'form-control', 'placeholder' => 'Digite seu email']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('password', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('password', ['label'=>'Senha','class' => 'form-control', 'placeholder' => 'Digite sua senha']) ?>
             </div>
             <div class="form-group">
                 <?= $this->Form->input(

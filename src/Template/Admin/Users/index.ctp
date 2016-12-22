@@ -30,7 +30,7 @@
 							<td><?= $user->email ?></td>
 							<td><?= $user->created ?></td>
 							<td><?= $user->modified ?></td>
-							<td><?= $this->Html->link('Editar', ['action' => 'edit', $user->id]) ?></td>
+							<td><?= $this->Html->link('Editar', ['action' => 'perfil', $user->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $user->id],
 								['confirm' => __('Tem certeza que deseja deletar o(a) user {0}?', $user->id)]) ?>

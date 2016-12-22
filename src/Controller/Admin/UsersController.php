@@ -53,8 +53,8 @@ class UsersController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Users');
-		$this->set('subtitle', 'Gerenciar users');
+		$this->set('title', 'Usuários');
+		$this->set('subtitle', 'Gerenciar Usuário');
 		
         $users = $this->Users->find('all');
 
@@ -69,8 +69,11 @@ class UsersController extends AppController
      * @return \Cake\Network\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function perfil($id = null)
     {
+        $this->set('title', 'Perfil');
+        $this->set('subtitle', 'Editar Perfil');
+
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
@@ -86,14 +89,14 @@ class UsersController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Users');
-		$this->set('subtitle', 'Adicionar user');
+		$this->set('title', 'Usuários');
+		$this->set('subtitle', 'Adicionar Usuário');
 		
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('user salvo com sucesso!'));
+                $this->Flash->success(__('Usuário salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Não foi possivel salvar user. Por favor, tente novamente.'));
@@ -112,8 +115,8 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Users');
-		$this->set('subtitle', 'Editar user');
+		$this->set('title', 'Usuários');
+		$this->set('subtitle', 'Editar Usuário');
 	
         $user = $this->Users->get($id, [
             'contain' => []
