@@ -16,6 +16,36 @@ class UsersController extends AppController
         $this->loadModel('App.Users');
     }
 
+    public function login()
+    {
+        $this->set('title', 'Painel Administrativo');
+        $this->set('subtitle', '');
+        if($this->Auth->user()) {
+            return $this->redirect($this->Auth->redirectUrl());
+        }
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            else {
+                $this->Flash->error( 'Usuário ou senha inválidos!', ['key' => 'auth']);
+            }
+        }
+    }
+
+    public function logout()
+    {
+        $this->Flash->success(
+            __('Você saiu do sistema!'),
+            [
+                'key' => 'auth'
+            ]
+        );
+        return $this->redirect($this->Auth->logout());
+    }
+
     /**
      * Index method
      *

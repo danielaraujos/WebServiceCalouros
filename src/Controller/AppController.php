@@ -82,7 +82,7 @@ class AppController extends Controller
         $prefix = isset($this->request->params['prefix']) ? $this->request->params['prefix'] : null;
         if($prefix == 'admin'){
             $this->viewBuilder()->theme('AdminTheme');
-            //$this->set('user_auth',$this->Auth->user());
+            $this->set('user_auth',$this->Auth->user());
         }
 
         if (!array_key_exists('_serialize', $this->viewVars) &&

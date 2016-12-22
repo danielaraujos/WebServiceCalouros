@@ -16,9 +16,6 @@
 						<th>Id</th>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Password</th>
-						<th>Image</th>
-						<th>Dir</th>
 						<th>Created</th>
 						<th>Modified</th>
 						<th>Editar</th>
@@ -31,9 +28,6 @@
 							<td><?= $this->Number->format($user->id) ?></td>
 							<td><?= $user->name ?></td>
 							<td><?= $user->email ?></td>
-							<td><?= $user->password ?></td>
-							<td><?= $user->image ?></td>
-							<td><?= $user->dir ?></td>
 							<td><?= $user->created ?></td>
 							<td><?= $user->modified ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $user->id]) ?></td>
