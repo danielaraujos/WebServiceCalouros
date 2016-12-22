@@ -37,12 +37,30 @@ class AppController extends Controller
      *
      * @return void
      */
+
+    public $helpers = array('AdminTheme.Menu');
+
+
     public function initialize()
     {
         parent::initialize();
 
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            //'loginRedirect'=>'/admin',
+            //'logoutRedirect'=>'/admin',
+            'authError' => false,
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                    ],
+                    'userModel' => 'Users'
+                ]
+            ],
+        ]);
 
         /*
          * Enable the following components for recommended CakePHP security settings.
@@ -60,6 +78,13 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+
+        $prefix = isset($this->request->params['prefix']) ? $this->request->params['prefix'] : null;
+        if($prefix == 'admin'){
+            $this->viewBuilder()->theme('AdminTheme');
+            //$this->set('user_auth',$this->Auth->user());
+        }
+
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
