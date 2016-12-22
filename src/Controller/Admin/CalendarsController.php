@@ -23,8 +23,8 @@ class CalendarsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Calendars');
-		$this->set('subtitle', 'Gerenciar calendars');
+		$this->set('title', 'Calendário');
+		$this->set('subtitle', 'Gerenciar calendário');
 		
         $this->paginate = [
             'contain' => ['MonthCalendars']
@@ -43,17 +43,17 @@ class CalendarsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Calendars');
-		$this->set('subtitle', 'Adicionar calendar');
+		$this->set('title', 'Calendário');
+		$this->set('subtitle', 'Adicionar calendário');
 		
         $calendar = $this->Calendars->newEntity();
         if ($this->request->is('post')) {
             $calendar = $this->Calendars->patchEntity($calendar, $this->request->data);
             if ($this->Calendars->save($calendar)) {
-                $this->Flash->success(__('calendar salvo com sucesso!'));
+                $this->Flash->success(__('Calendário salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar calendar. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar calendário. Por favor, tente novamente.'));
             }
         }
         $monthCalendars = $this->Calendars->MonthCalendars->find('list', ['limit' => 200]);
@@ -70,8 +70,8 @@ class CalendarsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Calendars');
-		$this->set('subtitle', 'Editar calendar');
+		$this->set('title', 'Calendário');
+		$this->set('subtitle', 'Editar calendário');
 	
         $calendar = $this->Calendars->get($id, [
             'contain' => []
@@ -79,10 +79,10 @@ class CalendarsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $calendar = $this->Calendars->patchEntity($calendar, $this->request->data);
             if ($this->Calendars->save($calendar)) {
-                $this->Flash->success(__('calendar editado com sucesso!'));
+                $this->Flash->success(__('Calendário editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar calendar. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar calendário. Por favor, tente novamente.'));
             }
         }
         $monthCalendars = $this->Calendars->MonthCalendars->find('list', ['limit' => 200]);
@@ -102,9 +102,9 @@ class CalendarsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $calendar = $this->Calendars->get($id);
         if ($this->Calendars->delete($calendar)) {
-            $this->Flash->success(__('calendar deletado(a) com sucesso!'));
+            $this->Flash->success(__('Calendário deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar calendar. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar calendário. Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }

@@ -14,22 +14,20 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Nome</th>
-						<th>Mês</th>
+						<th>Title</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($calendars as $calendar): ?>
+					<?php foreach ($benefits as $benefit): ?>
 						<tr>
-							<td><?= $this->Number->format($calendar->id) ?></td>
-							<td><?= $calendar->name ?></td>
-							<td><?= $calendar->has('month_calendar') ? $this->Html->link($calendar->month_calendar->name, ['controller' => 'MonthCalendars', 'action' => 'view', $calendar->month_calendar->id]) : '' ?></td>
-							<td><?= $this->Html->link('Editar', ['action' => 'edit', $calendar->id]) ?></td>
+							<td><?= $this->Number->format($benefit->id) ?></td>
+							<td><?= $benefit->title ?></td>
+							<td><?= $this->Html->link('Editar', ['action' => 'edit', $benefit->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
-								['action' => 'delete', $calendar->id],
-								['confirm' => __('Tem certeza que deseja deletar o(a) calendar {0}?', $calendar->id)]) ?>
+								['action' => 'delete', $benefit->id],
+								['confirm' => __('Tem certeza que deseja deletar o(a) benefit {0}?', $benefit->id)]) ?>
 							</td>
 						</tr>
                 	<?php endforeach; ?>

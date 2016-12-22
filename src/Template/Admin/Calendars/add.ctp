@@ -6,10 +6,10 @@
     <?= $this->Form->create($calendar) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('name', ['label'=>'Nome do evento','class' => 'form-control', 'placeholder' => 'Digite o nome do evento']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('month_calendar_id', ['class' => 'form-control', 'placeholder' => '', 'options' => $monthCalendars]) ?>
+				<?= $this->Form->input('month_calendar_id', ['label'=>'Mês do ano','class' => 'form-control', 'placeholder' => '', 'options' => $monthCalendars]) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">

@@ -46,6 +46,13 @@
                 ]
             );
             ?>
+
+            <?= $this->Menu->treeView('fa fa-users', 'Beneficios', 'benefits', [
+                    ['Adicionar beneficio', 'add'],
+                    ['Gerenciar beneficios', 'index'],
+                ]
+            );
+            ?>
             <?= $this->Menu->item('fa fa-sign-out', 'Sair', 'users', 'logout'); ?>
         </ul>
     </section>

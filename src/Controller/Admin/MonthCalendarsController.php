@@ -23,8 +23,8 @@ class MonthCalendarsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'MonthCalendars');
-		$this->set('subtitle', 'Gerenciar monthCalendars');
+		$this->set('title', 'Meses do ano');
+		$this->set('subtitle', 'Gerenciar meses do ano');
 		
         $monthCalendars = $this->MonthCalendars->find('all');
 
@@ -41,8 +41,8 @@ class MonthCalendarsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'MonthCalendars');
-		$this->set('subtitle', 'Adicionar monthCalendar');
+		$this->set('title', 'Meses do ano');
+		$this->set('subtitle', 'Adicionar mês');
 		
         $monthCalendar = $this->MonthCalendars->newEntity();
         if ($this->request->is('post')) {
@@ -67,8 +67,8 @@ class MonthCalendarsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'MonthCalendars');
-		$this->set('subtitle', 'Editar monthCalendar');
+		$this->set('title', 'Meses do ano');
+		$this->set('subtitle', 'Editar mês');
 	
         $monthCalendar = $this->MonthCalendars->get($id, [
             'contain' => []

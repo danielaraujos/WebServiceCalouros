@@ -6,7 +6,7 @@
     <?= $this->Form->create($monthCalendar) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('name', ['label'=>'Nome','class' => 'form-control', 'placeholder' => 'Digite o nome do mês']) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">
