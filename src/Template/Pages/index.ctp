@@ -43,12 +43,5 @@
 <!-- end Header -->
 
 
-
-
-
-<!-- Scripts -->
-<script src="../assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script src="../assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
 </body>
 </html>

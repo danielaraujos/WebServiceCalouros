@@ -1,47 +1,63 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-?>
+<?php $this->layout = false;?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <?= $this->Html->charset() ?>
-    <title>
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+    <meta charset="utf-8" />
+    <title>Erro 404 - WebService - Guia do Calouro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?php echo $this->Html->Css(
+    [
+    '/assets/bootstrap/css/bootstrap.min.css',
+    '/assets/css/style.css',
+    '/assets/css/responsive.css'
+    ]
+    );?>
+    <!--
+    <link type="text/css" media="all" href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <link type="text/css" media="all" href="../assets/css/style.css" rel="stylesheet" />
+
+    <link type="text/css" media="all" href="../assets/css/responsive.css" rel="stylesheet" />-->
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300' rel='stylesheet' type='text/css' />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" />
 </head>
-<body>
-    <div id="container">
-        <div id="header">
-            <h1><?= __('Error') ?></h1>
-        </div>
-        <div id="content">
-            <?= $this->Flash->render() ?>
-
-            <?= $this->fetch('content') ?>
-        </div>
-        <div id="footer">
-            <?= $this->Html->link(__('Back'), 'javascript:history.back()') ?>
+<body style="background-color:#eee; margin-top: 180px">
+<!-- Header -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>404</h1>
+                <h3>PÁGINA NÃO ENCONTRADA</h3>
+                <p>Lamentamos, mas algo deu errado.</p>
+            </div>
         </div>
     </div>
+</section>
+<!-- end Header -->
+
+
+<!-- Button -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+
+
+                <a href="<?php echo $this->Url->build(['controller'=>'Pages','action'=>'index']);?>">
+                    <div class="btn btn-action">Página Inicial</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Button -->
+
+
+
 </body>
 </html>
