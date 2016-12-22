@@ -18,9 +18,9 @@
     <!-- Theme style -->
     <?= $this->Html->css('AdminLTE.min.css') ?>
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-    <?= $this->Html->css('skins/skin-blue.css') ?>
+    <?= $this->Html->css('skins/skin-red.css') ?>
     <!-- iCheck -->
-    <?= $this->Html->css('/plugins/iCheck/flat/blue.css') ?>
+    <?= $this->Html->css('/plugins/iCheck/flat/red.css') ?>
     <!-- Morris chart -->
     <?= $this->Html->css("/plugins/morris/morris.css"); ?>
     <!-- jvectormap -->
@@ -41,7 +41,7 @@
 
     <?= $this->fetch('script'); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper skin-yellow-light">
 
     <?= $this->element('header'); ?>
