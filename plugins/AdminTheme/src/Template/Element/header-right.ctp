@@ -1,23 +1,84 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
         <!-- Messages: style can be found in dropdown.less-->
-
+        <?php /*
         <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-life-saver"></i>
+                <i class="fa fa-envelope-o"></i>
+                <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">
-                <li class="header">Desenvolvedor do Sistema</li>
-                <li class="header">
-                    <p>Nome: Daniel Araujo Silva<br>
-                    Telefone: (34) 996377353<br>
-                    Email: danielaraujos@live.com</p>
-
+                <li class="header">You have 4 messages</li>
+                <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                        <li><!-- start message -->
+                            <a href="#">
+                                <div class="pull-left">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                </div>
+                                <h4>
+                                    Support Team
+                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                </h4>
+                                <p>Why not buy a new awesome theme?</p>
+                            </a>
+                        </li>
+                        <!-- end message -->
+                        <li>
+                            <a href="#">
+                                <div class="pull-left">
+                                    <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                </div>
+                                <h4>
+                                    AdminLTE Design Team
+                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                </h4>
+                                <p>Why not buy a new awesome theme?</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="pull-left">
+                                    <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                </div>
+                                <h4>
+                                    Developers
+                                    <small><i class="fa fa-clock-o"></i> Today</small>
+                                </h4>
+                                <p>Why not buy a new awesome theme?</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="pull-left">
+                                    <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                </div>
+                                <h4>
+                                    Sales Department
+                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                </h4>
+                                <p>Why not buy a new awesome theme?</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="pull-left">
+                                    <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                </div>
+                                <h4>
+                                    Reviewers
+                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                </h4>
+                                <p>Why not buy a new awesome theme?</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="footer"><a href="mailto:danielaraujos@live.com">Mandar email</a></li>
+                <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
         </li>
-
+        */ ?>
 
         <!-- Notifications: style can be found in dropdown.less -->
         <?php /*
@@ -145,16 +206,22 @@
 
             <ul class="dropdown-menu">
                 <li class="user-header">
-                    <?php
-                    if($user_auth['image'] != null){
-                        echo $this->Html->Image($user_auth['dir'].'/'.$user_auth['image'],['class'=>"img-circle"]);
+                    <?php if($user_auth['image'] != null){
+                        echo $this->Html->image($user_auth['dir'].'/'.$user_auth['image'], [
+                            "class" => "img-circle",
+                            "alt" => "User Image"
+                        ]);
                     }else{
-                        echo $this->Html->Image('avatar.png',['class'=>"img-circle"]);
-                    }
-                   ?>
+                        echo $this->Html->image("avatar.png", [
+                            "class" => "img-circle",
+                            "alt" => "User Image"
+                        ]);
+
+                    }?>
+                    <?php  ?>
                     <p>
-                        <?= $user_auth['name'] ?>
-                        <?php echo '<small>Sejam bem vindo ao painel! </small>'?>
+                        <?= $user_auth['name'] ?> <? //$logged['lastname'] ?>
+                        <?php echo '<small>Seja bem vindo ao painel!</small>' ?>
                     </p>
                 </li>
 

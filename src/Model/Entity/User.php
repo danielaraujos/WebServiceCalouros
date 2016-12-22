@@ -33,6 +33,10 @@ class User extends Entity
         'id' => false
     ];
 
+    protected function _getCriada() {
+        return $this->_properties['created']->i18nFormat([\IntlDateFormatter::FULL, \IntlDateFormatter::SHORT]);
+    }
+
     protected function _getDir() {
         return "uploads/users/";
     }

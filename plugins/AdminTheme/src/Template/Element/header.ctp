@@ -2,10 +2,10 @@
 
     <div class="logo">
         <span class='logo-mini'>
-            <b></b>
+            <b>:-)</b>
         </span>
         <span class='logo-lg'>
-            <b>Sorteio</b>
+            <b>Hinário</b>
         </span>
     </div>
 

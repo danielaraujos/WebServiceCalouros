@@ -62,25 +62,7 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function perfil($id = null)
-    {
-        $this->set('title', 'Perfil');
-        $this->set('subtitle', 'Editar Perfil');
 
-        $user = $this->Users->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('user', $user);
-        $this->set('_serialize', ['user']);
-    }
 
     /**
      * Add method
@@ -113,7 +95,7 @@ class UsersController extends AppController
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function perfil($id = null)
     {
 		$this->set('title', 'Usuários');
 		$this->set('subtitle', 'Editar Usuário');

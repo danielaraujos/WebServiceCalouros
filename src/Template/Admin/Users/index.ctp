@@ -17,7 +17,6 @@
 						<th>Name</th>
 						<th>Email</th>
 						<th>Created</th>
-						<th>Modified</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
@@ -28,8 +27,7 @@
 							<td><?= $this->Number->format($user->id) ?></td>
 							<td><?= $user->name ?></td>
 							<td><?= $user->email ?></td>
-							<td><?= $user->created ?></td>
-							<td><?= $user->modified ?></td>
+							<td><?= $user->Criada ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'perfil', $user->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $user->id],

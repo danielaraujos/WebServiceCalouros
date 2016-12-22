@@ -1,6 +1,6 @@
 <aside class="main-sidebar">
-    <section class="sidebar">
 
+    <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
@@ -18,38 +18,22 @@
         </div>
 
         <ul class="sidebar-menu">
+
             <li class="header">MENU DE NAVEGAÇÃO</li>
 
-            <?= $this->Menu->item('fa fa-dashboard', 'Home', 'Index'); ?>
+            <?= $this->Menu->item('fa fa-dashboard', 'Index', 'Welcome'); ?>
 
-            <?= $this->Menu->treeView('fa fa-tags', 'Promoções', 'promotions', [
-                    ['Adicionar Participante', '../peoples/add'],
-                    ['Adicionar Promoção', 'add'],
-                    ['Gerenciar Promoções', 'index'],
-                    ['Gerenciar Ganhadores', '../winners/index']
-                ]
-            );
-            ?>
-            <?= $this->Menu->treeView('fa fa-child', 'Programações', 'internPrograms', [
-                    ['Adicionar Participante', '../internPeoples/add'],
-                    ['Adicionar Programação', 'add'],
-                    ['Gerenciar Programações', 'index'],
-                    ['Gerenciar Ganhadores', '../InternWinners/index']
-                ]
-            );
-            ?>
-
-            <?= $this->Menu->treeView('fa fa-desktop', 'Programas', 'programs', [
-                    ['Adicionar Programa', 'add'],
-                    ['Gerenciar Programas', 'index']
+            <?= $this->Menu->treeView('fa fa-tags', 'Prédios ', 'Hinos', [
+                    ['Adicionar prédio', 'add'],
+                    ['Gerenciar prédios', 'index'],
                 ]
             );
             ?>
 
 
-            <?= $this->Menu->treeView('fa fa-gear', 'Configurações', 'optimizations', [
-                    ['Gerenciar Usuários', '../users/index'],
-                    ['Gerenciar SEO', 'index'],
+            <?= $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [
+                    ['Adicionar usuários', 'add'],
+                    ['Gerenciar usuários', 'index'],
                 ]
             );
             ?>
