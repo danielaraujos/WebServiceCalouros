@@ -21,7 +21,7 @@
 
             <li class="header">MENU DE NAVEGAÇÃO</li>
 
-            <?= $this->Menu->item('fa fa-dashboard', 'Index', 'Welcome'); ?>
+            <?= $this->Menu->item('fa fa-dashboard', 'Dashboard', 'Dashboard'); ?>
 
             <?= $this->Menu->treeView('fa fa-tags', 'Prédios ', 'Hinos', [
                     ['Adicionar prédio', 'add'],

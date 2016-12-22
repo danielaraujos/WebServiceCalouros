@@ -55,7 +55,7 @@ class UsersController extends AppController
     {
 		$this->set('title', 'Usuários');
 		$this->set('subtitle', 'Gerenciar Usuário');
-		
+
         $users = $this->Users->find('all');
 
         $this->set(compact('users'));
@@ -73,7 +73,7 @@ class UsersController extends AppController
     {
 		$this->set('title', 'Usuários');
 		$this->set('subtitle', 'Adicionar Usuário');
-		
+
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
@@ -99,7 +99,7 @@ class UsersController extends AppController
     {
 		$this->set('title', 'Usuários');
 		$this->set('subtitle', 'Editar Usuário');
-	
+
         $user = $this->Users->get($id, [
             'contain' => []
         ]);

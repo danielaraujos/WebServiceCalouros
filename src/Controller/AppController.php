@@ -49,8 +49,8 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
-            //'loginRedirect'=>'/admin',
-            //'logoutRedirect'=>'/admin',
+            'loginRedirect'=>'/admin',
+            'logoutRedirect'=>'/admin',
             'authError' => false,
             'authenticate' => [
                 'Form' => [
