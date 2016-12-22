@@ -14,11 +14,8 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Name</th>
-						<th>Sub_name</th>
-						<th>Image</th>
-						<th>Dir</th>
-						<th>Credits</th>
+						<th>Sigla</th>
+						<th>Nome</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
@@ -29,9 +26,6 @@
 							<td><?= $this->Number->format($building->id) ?></td>
 							<td><?= $building->name ?></td>
 							<td><?= $building->sub_name ?></td>
-							<td><?= $building->image ?></td>
-							<td><?= $building->dir ?></td>
-							<td><?= $building->credits ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $building->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $building->id],

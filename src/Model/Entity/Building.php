@@ -30,4 +30,25 @@ class Building extends Entity
         '*' => true,
         'id' => false
     ];
+
+    protected function _getCriada() {
+        return $this->_properties['created']->i18nFormat([\IntlDateFormatter::FULL, \IntlDateFormatter::SHORT]);
+    }
+
+    protected function _getDir() {
+        return "uploads/building/";
+    }
+
+    protected function _getImageLink() {
+        if(isset($this->_properties['id']) && strlen($this->_properties['image']) > 1) {
+            return $this->_properties['dir'] . $this->_properties['image'];
+        }
+        //return 'avatar.png';
+    }
+    protected function _getThumbnailLink() {
+        if(isset($this->_properties['id']) && strlen($this->_properties['image']) > 1) {
+            return $this->_properties['dir'] . 'thumbnail-' . $this->_properties['image'];
+        }
+        ///return 'avatar.png';
+    }
 }

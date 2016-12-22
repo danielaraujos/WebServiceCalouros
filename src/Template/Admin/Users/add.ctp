@@ -27,11 +27,11 @@
             <div class="form-group">
                 <label>Pré-visualizar: </label><br>
                 <?php
-			echo $this->Html->Image( $user->thumbnailLink, [
-                'id' => 'imagePreview',
-                'style' => 'max-width: 350px; max-height: 350px',
-                'alt' => 'Imagem para Banner'
-                ] );
+			        echo $this->Html->Image( $user->thumbnailLink, [
+                    'id' => 'imagePreview',
+                    'style' => 'max-width: 350px; max-height: 350px',
+                    'alt' => 'Imagem para Banner'
+                    ] );
                 ?>
             </div>
     </div><!-- /.box-body -->

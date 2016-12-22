@@ -13,7 +13,7 @@ class BuildingsController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('App.Buildings');
+        $this->loadModel('Buildings');
     }
 
     /**
@@ -23,8 +23,8 @@ class BuildingsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Buildings');
-		$this->set('subtitle', 'Gerenciar buildings');
+		$this->set('title', 'Edifícios');
+		$this->set('subtitle', 'Gerenciar edifícios');
 		
         $buildings = $this->Buildings->find('all');
 
@@ -32,22 +32,6 @@ class BuildingsController extends AppController
         $this->set('_serialize', ['buildings']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Building id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $building = $this->Buildings->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('building', $building);
-        $this->set('_serialize', ['building']);
-    }
 
     /**
      * Add method
@@ -56,14 +40,14 @@ class BuildingsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Buildings');
-		$this->set('subtitle', 'Adicionar building');
+		$this->set('title', 'Edifícios');
+		$this->set('subtitle', 'Adicionar edifício');
 		
         $building = $this->Buildings->newEntity();
         if ($this->request->is('post')) {
             $building = $this->Buildings->patchEntity($building, $this->request->data);
             if ($this->Buildings->save($building)) {
-                $this->Flash->success(__('building salvo com sucesso!'));
+                $this->Flash->success(__('Edifício salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Não foi possivel salvar building. Por favor, tente novamente.'));
@@ -82,8 +66,8 @@ class BuildingsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Buildings');
-		$this->set('subtitle', 'Editar building');
+		$this->set('title', 'Edifícios');
+		$this->set('subtitle', 'Editar edifícios');
 	
         $building = $this->Buildings->get($id, [
             'contain' => []
@@ -91,7 +75,7 @@ class BuildingsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $building = $this->Buildings->patchEntity($building, $this->request->data);
             if ($this->Buildings->save($building)) {
-                $this->Flash->success(__('building editado com sucesso!'));
+                $this->Flash->success(__('Edifício editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Falha ao editar building. Por favor, tente novamente.'));
@@ -113,7 +97,7 @@ class BuildingsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $building = $this->Buildings->get($id);
         if ($this->Buildings->delete($building)) {
-            $this->Flash->success(__('building deletado(a) com sucesso!'));
+            $this->Flash->success(__('Edifício deletado(a) com sucesso!'));
         } else {
             $this->Flash->error(__('Falha ao deletar building. Por favor, tente novamente.'));
         }

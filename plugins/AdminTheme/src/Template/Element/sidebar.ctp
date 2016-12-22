@@ -23,9 +23,9 @@
 
             <?= $this->Menu->item('fa fa-dashboard', 'Dashboard', 'Dashboard'); ?>
 
-            <?= $this->Menu->treeView('fa fa-tags', 'Prédios ', 'Hinos', [
-                    ['Adicionar prédio', 'add'],
-                    ['Gerenciar prédios', 'index'],
+            <?= $this->Menu->treeView('fa fa-tags', 'Edifícios ', 'Buildings', [
+                    ['Adicionar edifício', 'add'],
+                    ['Gerenciar edifícios', 'index'],
                 ]
             );
             ?>
