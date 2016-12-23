@@ -6,22 +6,22 @@
     <?= $this->Form->create($management) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('function', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('function', ['label' => 'Função','class' => 'form-control', 'placeholder' => 'Digite a função']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('name', ['label' => 'Nome','class' => 'form-control', 'placeholder' => 'Digite o nome']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('room', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('room', ['label' => 'Sala','class' => 'form-control', 'placeholder' => 'Digite o número da sala']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('email', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('email', ['label' => 'Email','class' => 'form-control', 'placeholder' => 'Digite o email']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('phone', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('phone', ['label' => 'Telefone','class' => 'form-control', 'placeholder' => 'Digite o número telefônico']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('category_management_id', ['class' => 'form-control', 'placeholder' => '', 'options' => $categoryManagements]) ?>
+				<?= $this->Form->input('category_management_id', ['label' => 'Categoria','class' => 'form-control', 'placeholder' => '', 'options' => $categoryManagements]) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">

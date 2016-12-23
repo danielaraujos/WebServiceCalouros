@@ -23,8 +23,8 @@ class ManagementsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Managements');
-		$this->set('subtitle', 'Gerenciar managements');
+		$this->set('title', 'Gestões');
+		$this->set('subtitle', 'Gerenciar gestão');
 		
         $this->paginate = [
             'contain' => ['CategoryManagements']
@@ -35,22 +35,7 @@ class ManagementsController extends AppController
         $this->set('_serialize', ['managements']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Management id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $management = $this->Managements->get($id, [
-            'contain' => ['CategoryManagements']
-        ]);
 
-        $this->set('management', $management);
-        $this->set('_serialize', ['management']);
-    }
 
     /**
      * Add method
@@ -59,17 +44,17 @@ class ManagementsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Managements');
-		$this->set('subtitle', 'Adicionar management');
+		$this->set('title', 'Gestões');
+		$this->set('subtitle', 'Adicionar gestão');
 		
         $management = $this->Managements->newEntity();
         if ($this->request->is('post')) {
             $management = $this->Managements->patchEntity($management, $this->request->data);
             if ($this->Managements->save($management)) {
-                $this->Flash->success(__('management salvo com sucesso!'));
+                $this->Flash->success(__('Evento da gestão salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar management. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar Evento da gestão. Por favor, tente novamente.'));
             }
         }
         $categoryManagements = $this->Managements->CategoryManagements->find('list', ['limit' => 200]);
@@ -86,8 +71,8 @@ class ManagementsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Managements');
-		$this->set('subtitle', 'Editar management');
+		$this->set('title', 'Gestões');
+		$this->set('subtitle', 'Editar gestão');
 	
         $management = $this->Managements->get($id, [
             'contain' => []
@@ -95,10 +80,10 @@ class ManagementsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $management = $this->Managements->patchEntity($management, $this->request->data);
             if ($this->Managements->save($management)) {
-                $this->Flash->success(__('management editado com sucesso!'));
+                $this->Flash->success(__('Evento da gestão editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar management. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar Evento da gestão. Por favor, tente novamente.'));
             }
         }
         $categoryManagements = $this->Managements->CategoryManagements->find('list', ['limit' => 200]);
@@ -118,9 +103,9 @@ class ManagementsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $management = $this->Managements->get($id);
         if ($this->Managements->delete($management)) {
-            $this->Flash->success(__('management deletado(a) com sucesso!'));
+            $this->Flash->success(__('Evento da gestão deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar management. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar Evento da gestão. Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }

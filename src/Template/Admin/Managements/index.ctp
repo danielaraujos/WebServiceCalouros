@@ -14,12 +14,12 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Function</th>
-						<th>Name</th>
-						<th>Room</th>
+						<th>Função</th>
+						<th>Nome</th>
+						<th>Sala</th>
 						<th>Email</th>
-						<th>Phone</th>
-						<th>Category_management_id</th>
+						<th>Telefone</th>
+						<th>Categoria</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
