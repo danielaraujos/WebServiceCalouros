@@ -13,6 +13,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace App\Controller;
+use Cake\Event\Event;
 
 use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
@@ -28,6 +29,10 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['index']);
+    }
 
     /**
      * Displays a view

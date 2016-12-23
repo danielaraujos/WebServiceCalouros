@@ -67,7 +67,7 @@
             <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', 'general', [
                     ['Gerenciar transporte', 'index'],
                     ['Gerenciar alimentação', 'index'],
-                    ['Gerenciar sobre', 'index'],
+                    ['Gerenciar sobre', '../abouts/edit/1'],
                 ]
             );
             ?>
@@ -86,7 +86,7 @@
             );
             ?>
 
-            <?= $this->Menu->item('fa fa-sign-out', 'Sair', 'users', 'logout'); ?>
+            <!--<?= $this->Menu->item('fa fa-sign-out', 'Sair', 'users', 'logout'); ?>-->
         </ul>
     </section>
 </aside>
