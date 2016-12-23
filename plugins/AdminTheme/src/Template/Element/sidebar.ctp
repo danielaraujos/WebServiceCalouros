@@ -64,6 +64,21 @@
             );
             ?>
 
+            <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', 'general', [
+                    ['Gerenciar transporte', 'index'],
+                    ['Gerenciar alimentação', 'index'],
+                    ['Gerenciar sobre', 'index'],
+                ]
+            );
+            ?>
+            <?= $this->Menu->treeView('fa fa-users', 'Dicas', 'tips', [
+                    ['Adicionar dica', 'add'],
+                    ['Gerenciar dicas', 'index'],
+                    ['Adicionar categoria', 'index'],
+                ]
+            );
+            ?>
+
             <?= $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [
                     ['Adicionar usuários', 'add'],
                     ['Gerenciar usuários', 'index'],
