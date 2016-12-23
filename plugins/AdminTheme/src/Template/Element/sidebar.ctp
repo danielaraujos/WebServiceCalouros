@@ -44,6 +44,13 @@
                 ]
             );
             ?>
+            <?= $this->Menu->treeView('fa fa-users', 'Gestão', 'managements', [
+                    ['Adicionar gestão', 'add'],
+                    ['Gerenciar gestão', 'index'],
+                    ['Gerenciar categoria', '../category-managements/index']
+                ]
+            );
+            ?>
             <?= $this->Menu->treeView('fa fa-users', 'Telefones Uteis', 'telephones', [
                     ['Adicionar telefone', 'add'],
                     ['Gerenciar telefones', 'index'],
