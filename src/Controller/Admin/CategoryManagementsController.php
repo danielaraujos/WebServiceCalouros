@@ -23,8 +23,8 @@ class CategoryManagementsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'CategoryManagements');
-		$this->set('subtitle', 'Gerenciar categoryManagements');
+		$this->set('title', 'Categoria de Gestões');
+		$this->set('subtitle', 'Gerenciar categoria');
 		
         $categoryManagements = $this->CategoryManagements->find('all');
 
@@ -32,22 +32,6 @@ class CategoryManagementsController extends AppController
         $this->set('_serialize', ['categoryManagements']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Category Management id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $categoryManagement = $this->CategoryManagements->get($id, [
-            'contain' => ['Managements']
-        ]);
-
-        $this->set('categoryManagement', $categoryManagement);
-        $this->set('_serialize', ['categoryManagement']);
-    }
 
     /**
      * Add method
@@ -56,14 +40,14 @@ class CategoryManagementsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'CategoryManagements');
-		$this->set('subtitle', 'Adicionar categoryManagement');
+		$this->set('title', 'Categoria da gestão');
+		$this->set('subtitle', 'Adicionar categoria');
 		
         $categoryManagement = $this->CategoryManagements->newEntity();
         if ($this->request->is('post')) {
             $categoryManagement = $this->CategoryManagements->patchEntity($categoryManagement, $this->request->data);
             if ($this->CategoryManagements->save($categoryManagement)) {
-                $this->Flash->success(__('category management salvo com sucesso!'));
+                $this->Flash->success(__('Categoria salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Não foi possivel salvar category management. Por favor, tente novamente.'));
@@ -82,8 +66,8 @@ class CategoryManagementsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'CategoryManagements');
-		$this->set('subtitle', 'Editar categoryManagement');
+		$this->set('title', 'Categoria da gestão');
+		$this->set('subtitle', 'Editar categoria');
 	
         $categoryManagement = $this->CategoryManagements->get($id, [
             'contain' => []
@@ -91,7 +75,7 @@ class CategoryManagementsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $categoryManagement = $this->CategoryManagements->patchEntity($categoryManagement, $this->request->data);
             if ($this->CategoryManagements->save($categoryManagement)) {
-                $this->Flash->success(__('category management editado com sucesso!'));
+                $this->Flash->success(__('Categoria editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Falha ao editar category management. Por favor, tente novamente.'));
@@ -113,7 +97,7 @@ class CategoryManagementsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $categoryManagement = $this->CategoryManagements->get($id);
         if ($this->CategoryManagements->delete($categoryManagement)) {
-            $this->Flash->success(__('category management deletado(a) com sucesso!'));
+            $this->Flash->success(__('Categoria  deletado(a) com sucesso!'));
         } else {
             $this->Flash->error(__('Falha ao deletar category management. Por favor, tente novamente.'));
         }
