@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Typs Model
  *
+ * @property \Cake\ORM\Association\BelongsTo $CategoryTyps
+ *
  * @method \App\Model\Entity\Typ get($primaryKey, $options = [])
  * @method \App\Model\Entity\Typ newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Typ[] newEntities(array $data, array $options = [])
@@ -33,6 +35,11 @@ class TypsTable extends Table
         $this->table('typs');
         $this->displayField('name');
         $this->primaryKey('id');
+
+        $this->belongsTo('CategoryTyps', [
+            'foreignKey' => 'category_typ_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -57,17 +64,26 @@ class TypsTable extends Table
 
         $validator
             ->requirePresence('name_link', 'create')
-            ->notEmpty('name_link');
+            ->allowEmpty('name_link');
 
         $validator
             ->requirePresence('link', 'create')
-            ->notEmpty('link');
-
-        $validator
-            ->integer('category_typ')
-            ->requirePresence('category_typ', 'create')
-            ->notEmpty('category_typ');
+            ->allowEmpty('link');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['category_typ_id'], 'CategoryTyps'));
+
+        return $rules;
     }
 }

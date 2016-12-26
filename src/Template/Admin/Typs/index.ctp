@@ -14,10 +14,8 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Name</th>
-						<th>Name_link</th>
-						<th>Link</th>
-						<th>Category_typ</th>
+						<th>Nome</th>
+						<th>Categoria</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
@@ -27,9 +25,7 @@
 						<tr>
 							<td><?= $this->Number->format($typ->id) ?></td>
 							<td><?= $typ->name ?></td>
-							<td><?= $typ->name_link ?></td>
-							<td><?= $typ->link ?></td>
-							<td><?= $this->Number->format($typ->category_typ) ?></td>
+							<td><?= $typ->has('category_typ') ? $this->Html->link($typ->category_typ->name, ['controller' => 'CategoryTyps', 'action' => 'view', $typ->category_typ->id]) : '' ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $typ->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $typ->id],

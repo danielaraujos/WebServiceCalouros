@@ -16,7 +16,8 @@ class TypsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.typs'
+        'app.typs',
+        'app.category_typs'
     ];
 
     /**

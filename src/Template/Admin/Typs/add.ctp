@@ -1,24 +1,24 @@
 <div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title"> <?= $subtitle ?> </h3>
-    </div>
-	
-    <?= $this->Form->create($typ) ?>
+        <div class="box-header with-border">
+            <h3 class="box-title"> <?= $subtitle ?> </h3>
+        </div>
+
+        <?= $this->Form->create($typ) ?>
         <div class="box-body">
-			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+            <div class="form-group">
+                <?= $this->Form->input('name', ['label' => 'Nome','class' => 'form-control', 'placeholder' => 'Digite o nome']) ?>
+            </div>
+            <div class="form-group">
+                <?= $this->Form->input('body', ['label' => 'Conteúdo','class' => 'form-control', 'placeholder' => 'Digite o conteudo']) ?>
+            </div>
+            <div class="form-group">
+                <?= $this->Form->input('name_link', ['label' => 'Nome do link externo','class' => 'form-control', 'placeholder' => 'Digite o nome do link se existir']) ?>
+            </div>
+            <div class="form-group">
+                <?= $this->Form->input('link', ['label' => 'Link externo','class' => 'form-control', 'placeholder' => 'Digite o link do externo se existir']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('body', ['class' => 'form-control', 'placeholder' => '']) ?>
-            </div>
-			<div class="form-group">
-				<?= $this->Form->input('name_link', ['class' => 'form-control', 'placeholder' => '']) ?>
-            </div>
-			<div class="form-group">
-				<?= $this->Form->input('link', ['class' => 'form-control', 'placeholder' => '']) ?>
-            </div>
-			<div class="form-group">
-				<?= $this->Form->input('category_typ', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('category_typ_id', ['label' => 'Categoria','class' => 'form-control', 'placeholder' => '', 'options' => $categoryTyps]) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">

@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property string $body
  * @property string $name_link
  * @property string $link
- * @property int $category_typ
+ * @property int $category_typ_id
  */
 class Typ extends Entity
 {

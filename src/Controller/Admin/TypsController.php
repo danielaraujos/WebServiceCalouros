@@ -23,31 +23,19 @@ class TypsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Typs');
-		$this->set('subtitle', 'Gerenciar typs');
+		$this->set('title', 'Dicas');
+		$this->set('subtitle', 'Gerenciar dicas');
 		
+        $this->paginate = [
+            'contain' => ['CategoryTyps']
+        ];
         $typs = $this->Typs->find('all');
 
         $this->set(compact('typs'));
         $this->set('_serialize', ['typs']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Typ id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $typ = $this->Typs->get($id, [
-            'contain' => []
-        ]);
 
-        $this->set('typ', $typ);
-        $this->set('_serialize', ['typ']);
-    }
 
     /**
      * Add method
@@ -56,20 +44,21 @@ class TypsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Typs');
-		$this->set('subtitle', 'Adicionar typ');
+        $this->set('title', 'Dicas');
+        $this->set('subtitle', 'Adicionar dicas');
 		
         $typ = $this->Typs->newEntity();
         if ($this->request->is('post')) {
             $typ = $this->Typs->patchEntity($typ, $this->request->data);
             if ($this->Typs->save($typ)) {
-                $this->Flash->success(__('typ salvo com sucesso!'));
+                $this->Flash->success(__('Dicas salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar typ. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar dica. Por favor, tente novamente.'));
             }
         }
-        $this->set(compact('typ'));
+        $categoryTyps = $this->Typs->CategoryTyps->find('list', ['limit' => 200]);
+        $this->set(compact('typ', 'categoryTyps'));
         $this->set('_serialize', ['typ']);
     }
 
@@ -82,8 +71,8 @@ class TypsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Typs');
-		$this->set('subtitle', 'Editar typ');
+        $this->set('title', 'Dicas');
+        $this->set('subtitle', 'Editar dicas');
 	
         $typ = $this->Typs->get($id, [
             'contain' => []
@@ -91,13 +80,14 @@ class TypsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $typ = $this->Typs->patchEntity($typ, $this->request->data);
             if ($this->Typs->save($typ)) {
-                $this->Flash->success(__('typ editado com sucesso!'));
+                $this->Flash->success(__('Dicas editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar typ. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar dica. Por favor, tente novamente.'));
             }
         }
-        $this->set(compact('typ'));
+        $categoryTyps = $this->Typs->CategoryTyps->find('list', ['limit' => 200]);
+        $this->set(compact('typ', 'categoryTyps'));
         $this->set('_serialize', ['typ']);
     }
 
@@ -113,9 +103,9 @@ class TypsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $typ = $this->Typs->get($id);
         if ($this->Typs->delete($typ)) {
-            $this->Flash->success(__('typ deletado(a) com sucesso!'));
+            $this->Flash->success(__('Dicas deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar typ. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar dica. Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }
