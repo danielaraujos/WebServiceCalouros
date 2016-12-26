@@ -36,8 +36,8 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->extensions(['Json']);
     //Sobre
     $routes->resources('Abouts');
-
-    $routes->resources('Benefits');                      //Beneficios
+    //Beneficios
+    $routes->resources('Benefits');
     $routes->resources('Buildings');         //Edificios
     $routes->resources('Calendars');         //Calendarios
     $routes->resources('CategoryManagements');         //Edificios
