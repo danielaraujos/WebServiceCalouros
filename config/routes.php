@@ -38,8 +38,12 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('Abouts');
     //Beneficios
     $routes->resources('Benefits');
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Calendars');         //Calendarios
+    //Edificios
+    $routes->resources('Buildings');
+    //Calendarios
+    $routes->resources('Calendars');
+    //Meses do calendario
+    $routes->resources('MonthCalendars');
     $routes->resources('CategoryManagements');         //Edificios
     $routes->resources('Buildings');         //Edificios
     $routes->resources('Buildings');         //Edificios
