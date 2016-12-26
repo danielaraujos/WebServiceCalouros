@@ -23,8 +23,8 @@ class CategoryTypsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'CategoryTyps');
-		$this->set('subtitle', 'Gerenciar categoryTyps');
+		$this->set('title', 'Tipos de Categorias');
+		$this->set('subtitle', 'Gerenciar tipos de categorias');
 		
         $categoryTyps = $this->CategoryTyps->find('all');
 
@@ -32,22 +32,7 @@ class CategoryTypsController extends AppController
         $this->set('_serialize', ['categoryTyps']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Category Typ id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $categoryTyp = $this->CategoryTyps->get($id, [
-            'contain' => []
-        ]);
 
-        $this->set('categoryTyp', $categoryTyp);
-        $this->set('_serialize', ['categoryTyp']);
-    }
 
     /**
      * Add method
@@ -56,17 +41,17 @@ class CategoryTypsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'CategoryTyps');
-		$this->set('subtitle', 'Adicionar categoryTyp');
+        $this->set('title', 'Tipos de Categorias');
+        $this->set('subtitle', 'Adicionar tipo de categoria');
 		
         $categoryTyp = $this->CategoryTyps->newEntity();
         if ($this->request->is('post')) {
             $categoryTyp = $this->CategoryTyps->patchEntity($categoryTyp, $this->request->data);
             if ($this->CategoryTyps->save($categoryTyp)) {
-                $this->Flash->success(__('category typ salvo com sucesso!'));
+                $this->Flash->success(__('Categoria salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar category typ. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar categoria typ. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('categoryTyp'));
@@ -82,8 +67,8 @@ class CategoryTypsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'CategoryTyps');
-		$this->set('subtitle', 'Editar categoryTyp');
+        $this->set('title', 'Tipos de Categorias');
+        $this->set('subtitle', 'Editar tipo de categoria');
 	
         $categoryTyp = $this->CategoryTyps->get($id, [
             'contain' => []
@@ -91,10 +76,10 @@ class CategoryTypsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $categoryTyp = $this->CategoryTyps->patchEntity($categoryTyp, $this->request->data);
             if ($this->CategoryTyps->save($categoryTyp)) {
-                $this->Flash->success(__('category typ editado com sucesso!'));
+                $this->Flash->success(__('Categoria  editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar category typ. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar categoria typ. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('categoryTyp'));
@@ -113,9 +98,9 @@ class CategoryTypsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $categoryTyp = $this->CategoryTyps->get($id);
         if ($this->CategoryTyps->delete($categoryTyp)) {
-            $this->Flash->success(__('category typ deletado(a) com sucesso!'));
+            $this->Flash->success(__('Categoria  deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar category typ. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar categoria . Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }

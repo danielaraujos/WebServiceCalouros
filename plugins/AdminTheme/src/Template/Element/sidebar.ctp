@@ -71,10 +71,10 @@
                 ]
             );
             ?>
-            <?= $this->Menu->treeView('fa fa-users', 'Dicas', 'tips', [
+            <?= $this->Menu->treeView('fa fa-users', 'Dicas', 'typs', [
                     ['Adicionar dica', 'add'],
                     ['Gerenciar dicas', 'index'],
-                    ['Adicionar categoria', 'index'],
+                    ['Gerenciar categoria', '../category-typs'],
                 ]
             );
             ?>
