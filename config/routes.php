@@ -52,6 +52,10 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('Telephones');
     //Emails
     $routes->resources('Emails');
+    //Gestão
+    $routes->resources('Managements');
+    //Categoria de Gestão
+    $routes->resources('CategoryManagements');
 
 
     $routes->fallbacks('DashedRoute');
