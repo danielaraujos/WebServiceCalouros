@@ -44,6 +44,11 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('Calendars');
     //Meses do calendario
     $routes->resources('MonthCalendars');
+    //Dicas
+    $routes->resources('Typs');
+    //Dicas de categorias
+    $routes->resources('CategoryTyps');
+
     $routes->resources('CategoryManagements');         //Edificios
     $routes->resources('Buildings');         //Edificios
     $routes->resources('Buildings');         //Edificios
