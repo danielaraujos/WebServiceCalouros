@@ -46,16 +46,12 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('MonthCalendars');
     //Dicas
     $routes->resources('Typs');
-    //Dicas de categorias
+    //Categoria de dicas
     $routes->resources('CategoryTyps');
+    //Telefones
+    $routes->resources('Telephones');
 
-    $routes->resources('CategoryManagements');         //Edificios
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Buildings');         //Edificios
-    $routes->resources('Buildings');         //Edificios
+
     $routes->fallbacks('DashedRoute');
 });
 
