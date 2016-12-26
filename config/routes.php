@@ -58,6 +58,7 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('CategoryManagements');
     //Alimentacao
     $routes->resources('Feedings');
+    //Transportes
 
 
     $routes->fallbacks('DashedRoute');

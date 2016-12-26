@@ -64,8 +64,16 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', 'general', [
-                    ['Gerenciar transporte', 'index'],
+            <?= $this->Menu->treeView('fa fa-users', 'Transporte', 'transports', [
+                    ['Gerenciar transporte', 'edit/1'],
+                    ['Gerenciar turnos', '../shifts/index'],
+                    ['Gerenciar horários', '../schedules/index'],
+                    ['Gerenciar locais', '../places/index'],
+                 ]
+            );
+            ?>
+
+            <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', '#', [
                     ['Gerenciar alimentação', '../feedings/edit/1'],
                     ['Gerenciar sobre', '../abouts/edit/1'],
                 ]

@@ -14,24 +14,20 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Nome</th>
-						<th>Email</th>
-						<th>Data Criação</th>
+						<th>Name</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($users as $user): ?>
+					<?php foreach ($shifts as $shift): ?>
 						<tr>
-							<td><?= $this->Number->format($user->id) ?></td>
-							<td><?= $user->name ?></td>
-							<td><?= $user->email ?></td>
-							<td><?= $user->Criada ?></td>
-							<td><?= $this->Html->link('Editar', ['action' => 'perfil', $user->id]) ?></td>
+							<td><?= $this->Number->format($shift->id) ?></td>
+							<td><?= $shift->name ?></td>
+							<td><?= $this->Html->link('Editar', ['action' => 'edit', $shift->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
-								['action' => 'delete', $user->id],
-								['confirm' => __('Tem certeza que deseja deletar o(a) user {0}?', $user->id)]) ?>
+								['action' => 'delete', $shift->id],
+								['confirm' => __('Tem certeza que deseja deletar o(a) shift {0}?', $shift->id)]) ?>
 							</td>
 						</tr>
                 	<?php endforeach; ?>

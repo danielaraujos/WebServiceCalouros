@@ -14,24 +14,26 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Nome</th>
-						<th>Email</th>
-						<th>Data Criação</th>
+						<th>Ida</th>
+						<th>Intervalo</th>
+						<th>Volta</th>
+						<th>Shifts_id</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($users as $user): ?>
+					<?php foreach ($schedules as $schedule): ?>
 						<tr>
-							<td><?= $this->Number->format($user->id) ?></td>
-							<td><?= $user->name ?></td>
-							<td><?= $user->email ?></td>
-							<td><?= $user->Criada ?></td>
-							<td><?= $this->Html->link('Editar', ['action' => 'perfil', $user->id]) ?></td>
+							<td><?= $this->Number->format($schedule->id) ?></td>
+							<td><?= $schedule->ida ?></td>
+							<td><?= $schedule->intervalo ?></td>
+							<td><?= $schedule->volta ?></td>
+							<td><?= $schedule->has('shift') ? $this->Html->link($schedule->shift->name, ['controller' => 'Shifts', 'action' => 'view', $schedule->shift->id]) : '' ?></td>
+							<td><?= $this->Html->link('Editar', ['action' => 'edit', $schedule->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
-								['action' => 'delete', $user->id],
-								['confirm' => __('Tem certeza que deseja deletar o(a) user {0}?', $user->id)]) ?>
+								['action' => 'delete', $schedule->id],
+								['confirm' => __('Tem certeza que deseja deletar o(a) schedule {0}?', $schedule->id)]) ?>
 							</td>
 						</tr>
                 	<?php endforeach; ?>

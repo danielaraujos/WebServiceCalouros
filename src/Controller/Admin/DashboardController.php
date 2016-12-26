@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 
+
 /**
  * Users Controller
  *
@@ -20,6 +21,9 @@ class DashboardController extends AppController
     {
         $this->set('title', 'Painel Administrativo');
         $this->set('subtitle', '');
+
+
+
 
     }
 
