@@ -23,30 +23,13 @@ class PlacesController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Places');
-		$this->set('subtitle', 'Gerenciar places');
+		$this->set('title', 'Locais');
+		$this->set('subtitle', 'Gerenciar locais');
 		
         $places = $this->Places->find('all');
 
         $this->set(compact('places'));
         $this->set('_serialize', ['places']);
-    }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Place id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $place = $this->Places->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('place', $place);
-        $this->set('_serialize', ['place']);
     }
 
     /**
@@ -56,17 +39,17 @@ class PlacesController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Places');
-		$this->set('subtitle', 'Adicionar place');
+        $this->set('title', 'Locais');
+        $this->set('subtitle', 'Adicionar locais');
 		
         $place = $this->Places->newEntity();
         if ($this->request->is('post')) {
             $place = $this->Places->patchEntity($place, $this->request->data);
             if ($this->Places->save($place)) {
-                $this->Flash->success(__('place salvo com sucesso!'));
+                $this->Flash->success(__('Local salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar place. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar local. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('place'));
@@ -82,8 +65,8 @@ class PlacesController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Places');
-		$this->set('subtitle', 'Editar place');
+        $this->set('title', 'Locais');
+        $this->set('subtitle', 'Editar locais');
 	
         $place = $this->Places->get($id, [
             'contain' => []
@@ -91,10 +74,10 @@ class PlacesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $place = $this->Places->patchEntity($place, $this->request->data);
             if ($this->Places->save($place)) {
-                $this->Flash->success(__('place editado com sucesso!'));
+                $this->Flash->success(__('Local editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar place. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar local. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('place'));
@@ -113,9 +96,9 @@ class PlacesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $place = $this->Places->get($id);
         if ($this->Places->delete($place)) {
-            $this->Flash->success(__('place deletado(a) com sucesso!'));
+            $this->Flash->success(__('Local deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar place. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar local. Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }

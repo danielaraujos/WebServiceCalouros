@@ -6,10 +6,10 @@
     <?= $this->Form->create($place) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('title', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('title', ['label' => 'Ponto','class' => 'form-control',  'placeholder' => 'Digite nome do ponto']) ?>
             </div>
 			<div class="form-group">
-				<?= $this->Form->input('body', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('body', ['label' => 'Conteudo','class' => 'form-control', 'placeholder' => '']) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">

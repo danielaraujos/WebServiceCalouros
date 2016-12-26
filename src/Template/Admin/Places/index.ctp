@@ -14,7 +14,7 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Title</th>
+						<th>Ponto</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
