@@ -50,6 +50,8 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->resources('CategoryTyps');
     //Telefones
     $routes->resources('Telephones');
+    //Emails
+    $routes->resources('Emails');
 
 
     $routes->fallbacks('DashedRoute');
