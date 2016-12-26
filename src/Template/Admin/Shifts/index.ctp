@@ -14,7 +14,7 @@
                 <thead>
 					<tr>
 						<th>Id</th>
-						<th>Name</th>
+						<th>Turno</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>

@@ -6,7 +6,7 @@
     <?= $this->Form->create($shift) ?>
         <div class="box-body">
 			<div class="form-group">
-				<?= $this->Form->input('name', ['class' => 'form-control', 'placeholder' => '']) ?>
+				<?= $this->Form->input('name', ['label' => 'Nome do turno','class' => 'form-control', 'placeholder' => '']) ?>
             </div>
     </div><!-- /.box-body -->
     <div class="box-footer">
