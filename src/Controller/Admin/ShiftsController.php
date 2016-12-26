@@ -23,8 +23,8 @@ class ShiftsController extends AppController
      */
     public function index()
     {
-		$this->set('title', 'Shifts');
-		$this->set('subtitle', 'Gerenciar shifts');
+		$this->set('title', 'Turno');
+		$this->set('subtitle', 'Gerenciar turno');
 		
         $shifts = $this->Shifts->find('all');
 
@@ -32,22 +32,7 @@ class ShiftsController extends AppController
         $this->set('_serialize', ['shifts']);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Shift id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $shift = $this->Shifts->get($id, [
-            'contain' => ['Transports']
-        ]);
 
-        $this->set('shift', $shift);
-        $this->set('_serialize', ['shift']);
-    }
 
     /**
      * Add method
@@ -56,17 +41,17 @@ class ShiftsController extends AppController
      */
     public function add()
     {
-		$this->set('title', 'Shifts');
-		$this->set('subtitle', 'Adicionar shift');
+		$this->set('title', 'Turnos');
+		$this->set('subtitle', 'Adicionar turno');
 		
         $shift = $this->Shifts->newEntity();
         if ($this->request->is('post')) {
             $shift = $this->Shifts->patchEntity($shift, $this->request->data);
             if ($this->Shifts->save($shift)) {
-                $this->Flash->success(__('shift salvo com sucesso!'));
+                $this->Flash->success(__('Turno salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Não foi possivel salvar shift. Por favor, tente novamente.'));
+                $this->Flash->error(__('Não foi possivel salvar turno. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('shift'));
@@ -82,8 +67,8 @@ class ShiftsController extends AppController
      */
     public function edit($id = null)
     {
-		$this->set('title', 'Shifts');
-		$this->set('subtitle', 'Editar shift');
+		$this->set('title', 'Turnos');
+		$this->set('subtitle', 'Editar turno');
 	
         $shift = $this->Shifts->get($id, [
             'contain' => []
@@ -91,10 +76,10 @@ class ShiftsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $shift = $this->Shifts->patchEntity($shift, $this->request->data);
             if ($this->Shifts->save($shift)) {
-                $this->Flash->success(__('shift editado com sucesso!'));
+                $this->Flash->success(__('Turnos editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Falha ao editar shift. Por favor, tente novamente.'));
+                $this->Flash->error(__('Falha ao editar turno. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('shift'));
@@ -113,9 +98,9 @@ class ShiftsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $shift = $this->Shifts->get($id);
         if ($this->Shifts->delete($shift)) {
-            $this->Flash->success(__('shift deletado(a) com sucesso!'));
+            $this->Flash->success(__('Turno deletado(a) com sucesso!'));
         } else {
-            $this->Flash->error(__('Falha ao deletar shift. Por favor, tente novamente.'));
+            $this->Flash->error(__('Falha ao deletar turno. Por favor, tente novamente.'));
         }
         return $this->redirect(['action' => 'index']);
     }

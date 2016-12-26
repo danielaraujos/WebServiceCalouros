@@ -17,7 +17,6 @@
 						<th>Ida</th>
 						<th>Intervalo</th>
 						<th>Volta</th>
-						<th>Shifts_id</th>
 						<th>Editar</th>
 						<th>Deletar</th>
 					</tr>
@@ -29,7 +28,6 @@
 							<td><?= $schedule->ida ?></td>
 							<td><?= $schedule->intervalo ?></td>
 							<td><?= $schedule->volta ?></td>
-							<td><?= $schedule->has('shift') ? $this->Html->link($schedule->shift->name, ['controller' => 'Shifts', 'action' => 'view', $schedule->shift->id]) : '' ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $schedule->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $schedule->id],
