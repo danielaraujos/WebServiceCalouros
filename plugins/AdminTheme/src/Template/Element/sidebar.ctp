@@ -66,7 +66,7 @@
 
             <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', 'general', [
                     ['Gerenciar transporte', 'index'],
-                    ['Gerenciar alimentação', 'index'],
+                    ['Gerenciar alimentação', '../feedings/edit/1'],
                     ['Gerenciar sobre', '../abouts/edit/1'],
                 ]
             );
