@@ -87,12 +87,12 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [
-                    ['Adicionar usuários', 'add'],
-                    ['Gerenciar usuários', 'index'],
-                ]
-            );
-            ?>
+            <!--<? $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [-->
+                    <!--['Adicionar usuários', 'add'],-->
+                    <!--['Gerenciar usuários', 'index'],-->
+                <!--]-->
+            <!--);-->
+            <!--?>-->
 
             <!--<?= $this->Menu->item('fa fa-sign-out', 'Sair', 'users', 'logout'); ?>-->
         </ul>
