@@ -22,10 +22,21 @@ class DashboardController extends AppController
         $this->set('title', 'Painel Administrativo');
         $this->set('subtitle', '');
 
-        $this->loadModel('Apis');
-        $apis = $this->Apis->find()->all();
+        $this->loadModel('Users');
+        $this->loadModel('Emails');
+        $this->loadModel('Typs');
+        $this->loadModel('Telephones');
 
-        $this->set(compact('apis'));
+        $dados = [
+          'users'=> $this->Users->find()->all()->count(),
+          'emails'=> $this->Emails->find()->all()->count(),
+          'dicas'=> $this->Typs->find()->all()->count(),
+          'telefones'=> $this->Telephones->find()->all()->count()
+        ];
+
+        $this->set(compact('dados'));
+
+
 
 
 

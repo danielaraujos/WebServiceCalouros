@@ -23,14 +23,14 @@
 
             <?= $this->Menu->item('fa fa-dashboard', 'Dashboard', 'Dashboard'); ?>
 
-            <?= $this->Menu->treeView('fa fa-tags', 'Edifícios ', 'Buildings', [
+            <?= $this->Menu->treeView('fa fa-building', 'Edifícios ', 'Buildings', [
                     ['Adicionar edifício', 'add'],
                     ['Gerenciar edifícios', 'index'],
                 ]
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-tags', 'Calendário acadêmico ', 'calendars', [
+            <?= $this->Menu->treeView('fa fa-calendar-check-o', 'Calendário acadêmico ', 'calendars', [
                     ['Adicionar evento', 'add'],
                     ['Gerenciar calendário', 'index'],
                     ['Gerenciar meses', '../MonthCalendars/index']
@@ -38,7 +38,7 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-users', 'Beneficios', 'benefits', [
+            <?= $this->Menu->treeView('fa fa-television', 'Beneficios', 'benefits', [
                     ['Adicionar beneficio', 'add'],
                     ['Gerenciar beneficios', 'index'],
                 ]
@@ -51,20 +51,20 @@
                 ]
             );
             ?>
-            <?= $this->Menu->treeView('fa fa-users', 'Telefones Uteis', 'telephones', [
+            <?= $this->Menu->treeView('fa fa-phone', 'Telefones Uteis', 'telephones', [
                     ['Adicionar telefone', 'add'],
                     ['Gerenciar telefones', 'index'],
                 ]
             );
             ?>
-            <?= $this->Menu->treeView('fa fa-users', 'Emails Institucionais', 'emails', [
+            <?= $this->Menu->treeView('fa fa-envelope', 'Emails Institucionais', 'emails', [
                     ['Adicionar email', 'add'],
                     ['Gerenciar emails', 'index'],
                 ]
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-users', 'Transporte', 'transports', [
+            <?= $this->Menu->treeView('fa fa-bus', 'Transporte', 'transports', [
                     ['Gerenciar transporte', 'edit/1'],
                     ['Gerenciar turnos', '../shifts/index'],
                     ['Gerenciar horários', '../schedules/index'],
@@ -73,19 +73,21 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-users', 'Páginas Gerais', '#', [
-                    ['Gerenciar alimentação', '../feedings/edit/1'],
-                    ['Gerenciar sobre', '../abouts/edit/1'],
+            <?= $this->Menu->treeView('fa fa-info-circle', 'Dicas', 'typs', [
+                 ['Adicionar dica', 'add'],
+                 ['Gerenciar dicas', 'index'],
+                ['Gerenciar categoria', '../category-typs'],
                 ]
             );
             ?>
-            <?= $this->Menu->treeView('fa fa-users', 'Dicas', 'typs', [
-                    ['Adicionar dica', 'add'],
-                    ['Gerenciar dicas', 'index'],
-                    ['Gerenciar categoria', '../category-typs'],
+
+            <?= $this->Menu->treeView('fa fa-cog', 'Outras Páginas', '', [
+                    ['Gerenciar alimentação', 'feedings/edit/1'],
+                    ['Gerenciar sobre', 'abouts/edit/1'],
                 ]
             );
             ?>
+
 
             <!--<? $this->Menu->treeView('fa fa-users', 'Usuários', 'users', [-->
                     <!--['Adicionar usuários', 'add'],-->
