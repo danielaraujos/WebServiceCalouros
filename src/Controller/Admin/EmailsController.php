@@ -25,6 +25,10 @@ class EmailsController extends AppController
     {
 		$this->set('title', 'Emails Institucionais');
 		$this->set('subtitle', 'Gerenciar emails');
+
+		$this->paginate = [
+		  'order'=> ['Emails.name' => 'asc']
+        ];
 		
         $emails = $this->Emails->find('all');
 
@@ -46,7 +50,7 @@ class EmailsController extends AppController
         if ($this->request->is('post')) {
             $email = $this->Emails->patchEntity($email, $this->request->data);
             if ($this->Emails->save($email)) {
-                $this->Flash->success(__('email salvo com sucesso!'));
+                $this->Flash->success(__('E-mail salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Não foi possivel salvar email. Por favor, tente novamente.'));
@@ -74,7 +78,7 @@ class EmailsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $email = $this->Emails->patchEntity($email, $this->request->data);
             if ($this->Emails->save($email)) {
-                $this->Flash->success(__('email editado com sucesso!'));
+                $this->Flash->success(__('E-mail editado com sucesso!'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('Falha ao editar email. Por favor, tente novamente.'));
@@ -96,7 +100,7 @@ class EmailsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $email = $this->Emails->get($id);
         if ($this->Emails->delete($email)) {
-            $this->Flash->success(__('email deletado(a) com sucesso!'));
+            $this->Flash->success(__('E-mail deletado(a) com sucesso!'));
         } else {
             $this->Flash->error(__('Falha ao deletar email. Por favor, tente novamente.'));
         }
