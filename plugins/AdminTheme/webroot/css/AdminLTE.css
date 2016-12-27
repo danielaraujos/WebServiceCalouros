@@ -2712,6 +2712,16 @@ table.text-center th {
   height: 250px;
   overflow: auto;
 }
+
+.direct-chat-message1 {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  padding: 0px 10px 10px 10px;
+  height: 250px;
+  overflow: auto;
+}
 .direct-chat-msg,
 .direct-chat-text {
   display: block;
@@ -2728,6 +2738,7 @@ table.text-center th {
   clear: both;
 }
 .direct-chat-messages,
+.direct-chat-message1,
 .direct-chat-contacts {
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   -moz-transition: -moz-transform 0.5s ease-in-out;

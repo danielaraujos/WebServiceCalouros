@@ -10,6 +10,7 @@
 
     <?= $this->Html->css('bootstrap.min.css') ?>
 
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -32,14 +33,29 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <?= $this->Html->css("/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"); ?>
 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <?= $this->Html->css("https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"); ?>
     <?= $this->Html->css("https://oss.maxcdn.com/respond/1.4.2/respond.min.js"); ?>
+
     <![endif]-->
 
     <?= $this->fetch('script'); ?>
+
+    <!-- Step 2: Load the library. -->
+
+    <script>
+        (function(w,d,s,g,js,fs){
+            g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+            js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+            js.src='https://apis.google.com/js/platform.js';
+            fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+        }(window,document,'script'));
+    </script>
+
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper skin-yellow-light">
@@ -111,6 +127,7 @@
 <?= $this->Html->script("/plugins/ckeditor/ckeditor.js"); ?>
 <!-- AdminLTE App -->
 <?= $this->Html->script("app.min.js"); ?>
+
 
 <?= $this->fetch('scriptBottom'); ?>
 
