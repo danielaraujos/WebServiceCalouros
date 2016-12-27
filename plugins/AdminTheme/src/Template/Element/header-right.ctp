@@ -4,7 +4,7 @@
 
         <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-life-saver"></i>
+                <i class="fa fa-refresh"></i>
             </a>
             <ul class="dropdown-menu">
                 <li class="header">Lista de API</li>

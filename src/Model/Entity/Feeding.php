@@ -25,4 +25,8 @@ class Feeding extends Entity
         '*' => true,
         'id' => false
     ];
+
+    protected function _setPassword($password){
+        return (new DefaultPasswordHasher)->hash($password);
+    }
 }

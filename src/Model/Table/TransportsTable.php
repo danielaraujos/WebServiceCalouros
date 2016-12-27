@@ -33,6 +33,37 @@ class TransportsTable extends Table
         $this->table('transports');
         $this->displayField('id');
         $this->primaryKey('id');
+
+        $this->addBehavior('Timestamp');
+        $this->addBehavior('Josegonzalez/Upload.Upload', [
+            'image' => [
+                'path' => 'webroot{DS}img{DS}uploads{DS}{table}{DS}',
+                'nameCallback' => function($data, $settings) {
+                    return time() . '.' . pathinfo($data['name'], PATHINFO_EXTENSION);
+                },
+                'transformer' => function (\Cake\Datasource\RepositoryInterface $table, \Cake\Datasource\EntityInterface $entity, $data, $field, $settings) {
+                    // get the extension from the file
+                    // there could be better ways to do this, and it will fail
+                    // if the file has no extension
+                    $extension = pathinfo($data['name'], PATHINFO_EXTENSION);
+                    // Store the thumbnail in a temporary file
+                    $tmp = tempnam(sys_get_temp_dir(), 'upload') . '.' . $extension;
+                    // Use the Imagine library to DO THE THING
+                    $size = new \Imagine\Image\Box(350, 350);
+                    $mode = \Imagine\Image\ImageInterface::THUMBNAIL_INSET;
+                    $imagine = new \Imagine\Gd\Imagine();
+                    // Save that modified file to our temp file
+                    $imagine->open($data['tmp_name'])
+                        ->thumbnail($size, $mode)
+                        ->save($tmp);
+                    // Now return the original *and* the thumbnail
+                    return [
+                        $data['tmp_name'] => $data['name'],
+                        $tmp => 'thumbnail-' . $data['name'],
+                    ];
+                },
+            ],
+        ]);
     }
 
     /**
