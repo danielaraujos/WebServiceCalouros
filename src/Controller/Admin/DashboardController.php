@@ -22,6 +22,14 @@ class DashboardController extends AppController
         $this->set('title', 'Painel Administrativo');
         $this->set('subtitle', '');
 
+        $this->loadModel('Apis');
+        $apis = $this->Apis->find()->all();
+
+        $this->set(compact('apis'));
+
+
+
+
 
 
 

@@ -59,6 +59,14 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     //Alimentacao
     $routes->resources('Feedings');
     //Transportes
+    $routes->resources('Transports');
+    //Turnos
+    $routes->resources('Shifts');
+    //Horario
+    $routes->resources('Schedules');
+    //Locais
+    $routes->resources('Places');
+
 
 
     $routes->fallbacks('DashedRoute');

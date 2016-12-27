@@ -1,5 +1,22 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
+
+
+        <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-life-saver"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li class="header">Lista de API</li>
+                <li class="header">
+                    <p>Para facilitar o acesso há todas as funções já implementadas, foi desenvolvido uma documentação. </p>
+
+                </li>
+                <li class="footer"><?php echo $this->Html->link('Acessar API',['controller'=>'apis','action'=>'index']);?></li>
+            </ul>
+        </li>
+
+
         <!-- Messages: style can be found in dropdown.less-->
         <?php /*
         <li class="dropdown messages-menu">
