@@ -36,7 +36,7 @@ class Building extends Entity
     }
 
     protected function _getDir() {
-        return "uploads/building/";
+        return "uploads/buildings/";
     }
 
     protected function _getImageLink() {

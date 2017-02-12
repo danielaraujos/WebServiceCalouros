@@ -14,7 +14,7 @@ class DashboardController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('Users');
+        $this->loadModel('App.Users');
     }
 
     public function index()
@@ -22,10 +22,10 @@ class DashboardController extends AppController
         $this->set('title', 'Painel Administrativo');
         $this->set('subtitle', '');
 
-        $this->loadModel('Users');
-        $this->loadModel('Emails');
-        $this->loadModel('Typs');
-        $this->loadModel('Telephones');
+        $this->loadModel('App.Users');
+        $this->loadModel('App.Emails');
+        $this->loadModel('App.Typs');
+        $this->loadModel('App.Telephones');
 
         $dados = [
           'users'=> $this->Users->find()->all()->count(),
@@ -35,13 +35,6 @@ class DashboardController extends AppController
         ];
 
         $this->set(compact('dados'));
-
-
-
-
-
-
-
 
 
     }

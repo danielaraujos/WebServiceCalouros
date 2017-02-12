@@ -87,6 +87,10 @@ class BenefitsTable extends Table
             ->notEmpty('body');
 
         $validator
+            ->requirePresence('sub_title', 'create')
+            ->notEmpty('sub_title');
+
+        $validator
             ->requirePresence('link', 'create')
             ->notEmpty('link');
 

@@ -47,6 +47,8 @@ class BenefitsController extends AppController
         $benefit = $this->Benefits->newEntity();
         if ($this->request->is('post')) {
             $benefit = $this->Benefits->patchEntity($benefit, $this->request->data);
+//            debug($benefit);
+//            exit();
             if ($this->Benefits->save($benefit)) {
                 $this->Flash->success(__('Benefícios salvo com sucesso!'));
                 return $this->redirect(['action' => 'index']);

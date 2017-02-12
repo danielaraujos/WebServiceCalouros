@@ -9,6 +9,9 @@
             <?= $this->Form->input('title', ['label' => 'Nome','class' => 'form-control', 'placeholder' => 'Digite o nome do beneficio']) ?>
         </div>
         <div class="form-group">
+            <?= $this->Form->input('sub_title', ['label' => 'Resumo','class' => 'form-control', 'placeholder' => 'Digite um resumo para sub titulo']) ?>
+        </div>
+        <div class="form-group">
             <?= $this->Form->input('body', ['label' => 'Conteudo','class' => 'form-control', 'placeholder' => '']) ?>
         </div>
         <div class="form-group">

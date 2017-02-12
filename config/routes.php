@@ -72,8 +72,8 @@ Router::scope('/api/v1', function (RouteBuilder $routes) {
     $routes->fallbacks('DashedRoute');
 });
 
-Router::prefix('admin',function ($routes){
-    $routes->connect('/', ['controller' => 'Dashboard', 'action' => 'index']);
+Router::prefix('admin',function (RouteBuilder $routes){
+    $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
     $routes->fallbacks('DashedRoute');
 });
 
