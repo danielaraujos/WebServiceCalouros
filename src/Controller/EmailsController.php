@@ -47,8 +47,17 @@ class EmailsController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
-        $emails = $this->paginate($this->Emails);
+        $this->paginate = [
+            'limit'=>500,
+            'order' => [
+                'Emails.name' => 'asc'
+            ]
+
+        ];
+        //$emails = $this->paginate($this->Emails);
+
+        $emails = $this->Emails->find()->all();
+
 
         $this->set(compact('emails'));
         $this->set('_serialize', ['emails']);

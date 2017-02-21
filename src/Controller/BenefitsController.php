@@ -47,8 +47,10 @@ class BenefitsController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
-        $benefits = $this->paginate($this->Benefits);
+//        $this->paginate = ['limit'=>500];
+//        $benefits = $this->paginate($this->Benefits);
+
+        $benefits = $this->Benefits->find()->all();
 
         $this->set(compact('benefits'));
         $this->set('_serialize', ['benefits']);

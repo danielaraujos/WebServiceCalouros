@@ -47,8 +47,7 @@ class CalendarsController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
-        $calendars = $this->paginate($this->Calendars);
+        $calendars = $this->Calendars->find()->all();
 
         $this->set(compact('calendars'));
         $this->set('_serialize', ['calendars']);

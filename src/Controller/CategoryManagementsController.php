@@ -47,11 +47,17 @@ class CategoryManagementsController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
-        $categoty = $this->paginate($this->CategoryManagements);
+        $this->paginate = [
+            'limit'=>500,
+            'order' => ['CategoryManagements.name'=>'asc']
 
-        $this->set(compact('categoty'));
-        $this->set('_serialize', ['categoty']);
+        ];
+        $CManagements = $this->paginate($this->CategoryManagements);
+
+        //$CManagements = $this->CategoryManagements->find()->all();
+
+        $this->set(compact('CManagements'));
+        $this->set('_serialize', ['CManagements']);
 
     }
 }

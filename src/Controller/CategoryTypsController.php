@@ -45,13 +45,20 @@ class CategoryTypsController extends AppController
      */
     public function index()
     {
+
+
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
-        $typs = $this->paginate($this->CategoryTyps);
+        $this->paginate = [
+            'limit'=>500,
+            'order' => [
+                'CategoryTyps.name' => 'asc'
+            ]
+        ];
+        $cTypes = $this->paginate($this->CategoryTyps);
 
-        $this->set(compact('typs'));
-        $this->set('_serialize', ['typs']);
+        $this->set(compact('cTypes'));
+        $this->set('_serialize', ['cTypes']);
 
     }
 }

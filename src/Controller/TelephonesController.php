@@ -47,7 +47,12 @@ class TelephonesController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        $this->paginate = ['limit'=>500];
+        $this->paginate = [
+            'limit'=>500,
+            'order' => [
+                'Telephones.name' => 'asc'
+            ]
+        ];
         $telephones = $this->paginate($this->Telephones);
 
         $this->set(compact('telephones'));
