@@ -5,11 +5,6 @@
         </div>
 
         <div class="box-body">
-            <!--<div style="margin: 10px 0px;">-->
-                <!--<? $this->Html->link(-->
-                    <!--'Adicionar', ['action'=>'add'], ['class' => 'btn btn-primary']);-->
-                <!--?>-->
-            <!--</div>-->
             <table class="table table-bordered table-striped">
                 <thead>
 					<tr>
@@ -28,11 +23,7 @@
 							<td><?= $api->name ?></td>
 							<td><?= $api->description ?></td>
 							<td><?= $this->Html->link('Visualizar','http://localhost/Pessoal/webservicecalouro/api/v1/'.$api->link,['target'=>'_black']) ?></td>
-							<!--<td><? $this->Html->link('Editar', ['action' => 'edit', $api->id]) ?></td>-->
-							<!--<td><? $this->Form->postLink('Deletar',-->
-								<!--['action' => 'delete', $api->id],-->
-								<!--['confirm' => __('Tem certeza que deseja deletar o(a) api {0}?', $api->id)]) ?>-->
-							<!--</td>-->
+
 						</tr>
                 	<?php endforeach; ?>
                 </tbody>

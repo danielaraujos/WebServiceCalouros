@@ -98,6 +98,14 @@ class BuildingsTable extends Table
             ->requirePresence('credits', 'create')
             ->notEmpty('credits');
 
+        $validator
+            ->requirePresence('latitude', 'create')
+            ->notEmpty('latitude');
+
+        $validator
+            ->requirePresence('longitude', 'create')
+            ->notEmpty('longitude');
+
         return $validator;
     }
 }
