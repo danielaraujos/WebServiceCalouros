@@ -26,7 +26,7 @@
 
 <?= $this->Html->script("//cdn.ckeditor.com/4.6.1/basic/ckeditor.js", ['block' => "scriptBottom"]); ?>
 <?= $this->Html->scriptStart(['block' => "scriptBottom"]); ?>
-$(function () {
-    CKEDITOR.replace('body');
-});
+<!--$(function () {-->
+    <!--CKEDITOR.replace('body');-->
+<!--});-->
 <?= $this->Html->scriptEnd(); ?>

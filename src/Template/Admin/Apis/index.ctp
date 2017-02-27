@@ -22,7 +22,7 @@
 							<td><?= $this->Number->format($api->id) ?></td>
 							<td><?= $api->name ?></td>
 							<td><?= $api->description ?></td>
-							<td><?= $this->Html->link('Visualizar','http://localhost/Pessoal/webservicecalouro/api/v1/'.$api->link,['target'=>'_black']) ?></td>
+							<td><?= $this->Html->link('Visualizar','http://danielaraujos.com/webservicecalouros/api/v1/'.$api->link,['target'=>'_black']) ?></td>
 
 						</tr>
                 	<?php endforeach; ?>
