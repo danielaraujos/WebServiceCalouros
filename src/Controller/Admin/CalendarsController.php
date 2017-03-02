@@ -29,7 +29,8 @@ class CalendarsController extends AppController
         $this->paginate = [
             'contain' => ['MonthCalendars']
         ];
-        $calendars = $this->Calendars->find('all');
+        //$calendars = $this->Calendars->find('all');
+        $calendars = $this->paginate($this->Calendars);
 
         $this->set(compact('calendars'));
         $this->set('_serialize', ['calendars']);

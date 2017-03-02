@@ -29,7 +29,8 @@ class ManagementsController extends AppController
         $this->paginate = [
             'contain' => ['CategoryManagements']
         ];
-        $managements = $this->Managements->find('all');
+        //$managements = $this->Managements->find('all');
+        $managements = $this->paginate($this->Managements);
 
         $this->set(compact('managements'));
         $this->set('_serialize', ['managements']);

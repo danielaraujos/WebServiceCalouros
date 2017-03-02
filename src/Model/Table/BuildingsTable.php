@@ -93,7 +93,6 @@ class BuildingsTable extends Table
         $validator
             ->allowEmpty('image');
 
-
         $validator
             ->requirePresence('credits', 'create')
             ->notEmpty('credits');

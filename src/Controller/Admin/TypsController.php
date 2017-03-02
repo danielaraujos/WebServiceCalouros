@@ -29,7 +29,8 @@ class TypsController extends AppController
         $this->paginate = [
             'contain' => ['CategoryTyps']
         ];
-        $typs = $this->Typs->find('all');
+        //$typs = $this->Typs->find('all');
+        $typs = $this->paginate($this->Typs);
 
         $this->set(compact('typs'));
         $this->set('_serialize', ['typs']);
