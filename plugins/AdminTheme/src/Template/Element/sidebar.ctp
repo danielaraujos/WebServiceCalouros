@@ -64,14 +64,14 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-bus', 'Transporte', 'transports', [
-                    ['Gerenciar transporte', 'edit/1'],
-                    ['Gerenciar turnos', '../shifts/index'],
-                    ['Gerenciar horários', '../schedules/index'],
-                    ['Gerenciar locais', '../places/index'],
-                 ]
-            );
-            ?>
+            <!--< $this->Menu->treeView('fa fa-bus', 'Transporte', 'transports', [-->
+                    <!--['Gerenciar transporte', 'edit/1'],-->
+                    <!--['Gerenciar turnos', '../shifts/index'],-->
+                    <!--['Gerenciar horários', '../schedules/index'],-->
+                    <!--['Gerenciar locais', '../places/index'],-->
+                 <!--]-->
+            <!--);-->
+            <!--&gt;-->
 
             <?= $this->Menu->treeView('fa fa-info-circle', 'Dicas', 'typs', [
                  ['Adicionar dica', 'add'],
@@ -81,13 +81,9 @@
             );
             ?>
 
-            <?= $this->Menu->treeView('fa fa-cog', 'Outras Páginas', '', [
-                    ['Gerenciar alimentação', 'feedings/edit/1'],
-                    ['Gerenciar sobre', 'abouts/edit/1'],
-                ]
-            );
-            ?>
+            <?= $this->Menu->item('fa fa-coffee', 'Alimentação', 'feedings/edit/1'); ?>
 
+            <?= $this->Menu->item('fa  fa-child', 'Sobre', 'abouts/edit/1'); ?>
 
 
             <!--<?= $this->Menu->item('fa fa-sign-out', 'Sair', 'users', 'logout'); ?>-->
