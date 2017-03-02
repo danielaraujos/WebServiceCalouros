@@ -12,13 +12,6 @@
             <?= $this->Form->input('sub_name', ['label'=>'Nome','sub_name','class' => 'form-control', 'placeholder' => 'Digite o nome do edifício']) ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->input('latitude', ['label'=>'Latitude','sub_name','class' => 'form-control', 'placeholder' => 'Digite a latitude']) ?>
-        </div>
-        <div class="form-group">
-            <?= $this->Form->input('longitude', ['label'=>'Longitude','sub_name','class' => 'form-control', 'placeholder' => 'Digite a longitude']) ?>
-        </div>
-
-        <div class="form-group">
             <?= $this->Form->input('body', ['label'=>'Descrição','class' => 'form-control', 'placeholder' => '']) ?>
         </div>
         <div class="form-group">
