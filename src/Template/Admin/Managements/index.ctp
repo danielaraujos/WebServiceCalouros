@@ -33,7 +33,7 @@
 							<td><?= $management->room ?></td>
 							<td><?= $management->email ?></td>
 							<td><?= $management->phone ?></td>
-							<td><?= $management->has('category_management') ? $this->Html->link($management->category_management->name, ['controller' => 'CategoryManagements', 'action' => 'view', $management->category_management->id]) : '' ?></td>
+							<td><?= $management->has('category_management') ? $this->Html->link($management->category_management->name, ['controller' => 'CategoryManagements', 'action' => 'edit', $management->category_management->id]) : '' ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $management->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $management->id],

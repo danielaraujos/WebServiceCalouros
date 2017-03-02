@@ -25,7 +25,7 @@
 						<tr>
 							<td><?= $this->Number->format($typ->id) ?></td>
 							<td><?= $typ->name ?></td>
-							<td><?= $typ->has('category_typ') ? $this->Html->link($typ->category_typ->name, ['controller' => 'CategoryTyps', 'action' => 'view', $typ->category_typ->id]) : '' ?></td>
+							<td><?= $typ->has('category_typ') ? $this->Html->link($typ->category_typ->name, ['controller' => 'CategoryTyps', 'action' => 'edit', $typ->category_typ->id]) : '' ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $typ->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $typ->id],

@@ -25,7 +25,7 @@
 						<tr>
 							<td><?= $this->Number->format($calendar->id) ?></td>
 							<td><?= $calendar->name ?></td>
-							<td><?= $calendar->has('month_calendar') ? $this->Html->link($calendar->month_calendar->name, ['controller' => 'MonthCalendars', 'action' => 'view', $calendar->month_calendar->id]) : '' ?></td>
+							<td><?= $calendar->has('month_calendar') ? $this->Html->link($calendar->month_calendar->name, ['controller' => 'MonthCalendars', 'action' => 'edit', $calendar->month_calendar->id]) : '' ?></td>
 							<td><?= $this->Html->link('Editar', ['action' => 'edit', $calendar->id]) ?></td>
 							<td><?= $this->Form->postLink('Deletar',
 								['action' => 'delete', $calendar->id],
