@@ -13,7 +13,7 @@
             <table class="table table-bordered table-striped">
                 <thead>
 					<tr>
-						<th>Id</th>
+
 						<th>Nome</th>
 						<th>Email</th>
 						<th>Telefone</th>
@@ -24,7 +24,7 @@
 				<tbody>
 					<?php foreach ($emails as $email): ?>
 						<tr>
-							<td><?= $this->Number->format($email->id) ?></td>
+
 							<td><?= $email->name ?></td>
 							<td><?= $email->mail ?></td>
 							<td><?= $email->phone ?></td>

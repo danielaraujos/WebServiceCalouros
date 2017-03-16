@@ -96,8 +96,11 @@ class AppController extends Controller
             $this->set('user_auth',$this->Auth->user());
         }
 
-        // Esta linha abaixo resolve o problema do acesso ao app
-        $this->response->header('Access-Control-Allow-Origin', '*');
+        $this->response->header('Access-Control-Allow-Origin','*');
+        $this->response->header('Access-Control-Allow-Methods','*');
+        $this->response->header('Access-Control-Allow-Headers','X-Requested-With');
+        $this->response->header('Access-Control-Allow-Headers','Content-Type, x-xsrf-token');
+        $this->response->header('Access-Control-Max-Age','172800');
 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])

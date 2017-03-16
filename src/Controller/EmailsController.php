@@ -56,7 +56,13 @@ class EmailsController extends AppController
         ];
         //$emails = $this->paginate($this->Emails);
 
-        $emails = $this->Emails->find()->all();
+        //$emails = $this->Emails->find()->all();
+
+        $emails = $this->Emails->find('all',
+            [
+                'order' => ['Emails.name' => 'asc']
+            ]
+        );
 
 
         $this->set(compact('emails'));

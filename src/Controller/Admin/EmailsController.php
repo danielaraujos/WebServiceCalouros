@@ -30,7 +30,12 @@ class EmailsController extends AppController
 		  'order'=> ['Emails.name' => 'asc']
         ];
 		
-        $emails = $this->Emails->find('all');
+        $emails = $this->Emails->find('all',
+            [
+                'order' => ['Emails.name' => 'asc']
+            ]
+        );
+
 
         $this->set(compact('emails'));
         $this->set('_serialize', ['emails']);
